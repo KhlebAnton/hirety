@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header_container">
+            <div class="logo"></div>
+            <nav class="nav mobile-hidden">
+                <ol class="nav__list">
+                    <li class="nav__list-item"><a href="#modules">Модули</a></li>
+                    <li class="nav__list-item"><a href="#advantages">Возможности</a></li>
+                    <li class="nav__list-item"><a href="#rates">Тарифы</a></li>
+                </ol>
+            </nav>
+            <div class="header__btns mobile-hidden">
+                <a class="btn btn_secondary btn_header " href="#">Попробовать</a>
+                <a class="btn btn_primary btn_header" href="#">Вход</a>
+            </div>
+            <div class="nav__mobile desktop-hidden">
+                <div class="nav__mobile-wrapper">
+                    <a href="#" class="btn btn-nav_mobile btn-nav_mobile-user" ontouchstart>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 12C10.9 12 9.95833 11.6083 9.175 10.825C8.39167 10.0417 8 9.1 8 8C8 6.9 8.39167 5.95833 9.175 5.175C9.95833 4.39167 10.9 4 12 4C13.1 4 14.0417 4.39167 14.825 5.175C15.6083 5.95833 16 6.9 16 8C16 9.1 15.6083 10.0417 14.825 10.825C14.0417 11.6083 13.1 12 12 12ZM4 18V17.2C4 16.6333 4.14583 16.1125 4.4375 15.6375C4.72917 15.1625 5.11667 14.8 5.6 14.55C6.63333 14.0333 7.68333 13.6458 8.75 13.3875C9.81667 13.1292 10.9 13 12 13C13.1 13 14.1833 13.1292 15.25 13.3875C16.3167 13.6458 17.3667 14.0333 18.4 14.55C18.8833 14.8 19.2708 15.1625 19.5625 15.6375C19.8542 16.1125 20 16.6333 20 17.2V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18ZM6 18H18V17.2C18 17.0167 17.9542 16.85 17.8625 16.7C17.7708 16.55 17.65 16.4333 17.5 16.35C16.6 15.9 15.6917 15.5625 14.775 15.3375C13.8583 15.1125 12.9333 15 12 15C11.0667 15 10.1417 15.1125 9.225 15.3375C8.30833 15.5625 7.4 15.9 6.5 16.35C6.35 16.4333 6.22917 16.55 6.1375 16.7C6.04583 16.85 6 17.0167 6 17.2V18ZM12 10C12.55 10 13.0208 9.80417 13.4125 9.4125C13.8042 9.02083 14 8.55 14 8C14 7.45 13.8042 6.97917 13.4125 6.5875C13.0208 6.19583 12.55 6 12 6C11.45 6 10.9792 6.19583 10.5875 6.5875C10.1958 6.97917 10 7.45 10 8C10 8.55 10.1958 9.02083 10.5875 9.4125C10.9792 9.80417 11.45 10 12 10Z"
+                                fill="#2B2B2B" />
+                        </svg>
+
+
+                    </a>
+                    <div class="btn btn-nav_mobile btn-nav_mobile-menu" id="menuBtn" ontouchstart>
+                        <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4 18C3.71667 18 3.47917 17.9042 3.2875 17.7125C3.09583 17.5208 3 17.2833 3 17C3 16.7167 3.09583 16.4792 3.2875 16.2875C3.47917 16.0958 3.71667 16 4 16H20C20.2833 16 20.5208 16.0958 20.7125 16.2875C20.9042 16.4792 21 16.7167 21 17C21 17.2833 20.9042 17.5208 20.7125 17.7125C20.5208 17.9042 20.2833 18 20 18H4ZM4 13C3.71667 13 3.47917 12.9042 3.2875 12.7125C3.09583 12.5208 3 12.2833 3 12C3 11.7167 3.09583 11.4792 3.2875 11.2875C3.47917 11.0958 3.71667 11 4 11H20C20.2833 11 20.5208 11.0958 20.7125 11.2875C20.9042 11.4792 21 11.7167 21 12C21 12.2833 20.9042 12.5208 20.7125 12.7125C20.5208 12.9042 20.2833 13 20 13H4ZM4 8C3.71667 8 3.47917 7.90417 3.2875 7.7125C3.09583 7.52083 3 7.28333 3 7C3 6.71667 3.09583 6.47917 3.2875 6.2875C3.47917 6.09583 3.71667 6 4 6H20C20.2833 6 20.5208 6.09583 20.7125 6.2875C20.9042 6.47917 21 6.71667 21 7C21 7.28333 20.9042 7.52083 20.7125 7.7125C20.5208 7.90417 20.2833 8 20 8H4Z"
+                                fill="#2B2B2B" />
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="menu__mobile hidden">
+            <div class="menu__mobile-content">
+                <a href="#modules" class="btn btn_primary btn_menu-mobile">Модули</a>
+                <a href="#advantages" class="btn btn_secondary btn_menu-mobile">Возможности</a>
+                <a href="#rates" class="btn btn_secondary btn_menu-mobile">Тарифы</a>
+                <a href="#" class="btn btn_secondary btn_menu-mobile">Попробовать</a>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="section section_hero container">
+            <div class="section_hero__info">
+                <h1 class="section_hero__title">
+                    Ускоряем найм IT специалистов
+                </h1>
+                <h3 class="section_hero__text">
+                    Платформа для управления воронкой кандидатов, оценки навыков программистов и проведения
+                    <br>live-coding интервью
+                </h3>
+                <div class="section_hero__btns">
+                    <a href="#" class="btn btn_secondary btn_hero">Попробовать бесплатно</a>
+                    <a href="#" class="btn btn_primary btn_hero">Записаться на демо</a>
+
+                </div>
+            </div>
+            <div class="section_hero__for-who">
+                <div class="for-who__items">
+                    <div class="for-who__item">
+                        HR-специалистам
+                    </div>
+                    <div class="for-who__item">
+                        Техлидам
+                    </div>
+                    <div class="for-who__item">
+                        Небольшим IT командам
+                    </div>
+                    <div class="for-who__item">
+                        Стажировки
+                    </div>
+                    <div class="for-who__item">
+                        Менеджерам
+                    </div>
+                    <div class="for-who__item">
+                        Большим IT командам
+                    </div>
+                    <div class="for-who__item">
+                        Массовый отбор
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="section section_steps container_l">
+            <!-- swiper скрывается на мобильных -->
+            <div class="swiper-container mobile-hidden">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="section_steps__item">
+                            <img class="section_steps__item-img" src="./images/steps/1.png" alt="Шаг 1">
+                            <div class="section_steps__item-title">Шаг 1</div>
+                            <div class="section_steps__item-text">Добавь кандидатов</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="section_steps__item">
+                            <img class="section_steps__item-img" src="./images/steps/2.png" alt="Шаг 2">
+                            <div class="section_steps__item-title">Шаг 2</div>
+                            <div class="section_steps__item-text">Добавь в библиотеку свои вопросы и задачи </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="section_steps__item">
+                            <img class="section_steps__item-img" src="./images/steps/3.png" alt="Шаг 3">
+                            <div class="section_steps__item-title">Шаг 3</div>
+                            <div class="section_steps__item-text">Создай свое уникальное тестовое задание</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="section_steps__item">
+                            <img class="section_steps__item-img" src="./images/steps/1.png" alt="Шаг 4">
+                            <div class="section_steps__item-title">Шаг 4</div>
+                            <div class="section_steps__item-text">Отслеживай результаты</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="section_steps__item_five">
+                            <div class="step__like"></div>
+                            <div class="step_five__text">
+                                Поздравляем! <br>Вы нашли лучшего кандидата!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-btns">
+                    <div class="custom-prev"></div>
+                    <div class="custom-next"></div>
+                </div>
+
+            </div>
+            <!-- swiper end-->
+            <!-- дубль шагов для мобильных -->
+            <div class="section_steps__items desktop-hidden">
+                <div class="section_steps__item">
+                    <img class="section_steps__item-img" src="./images/steps/1.png" alt="Шаг 1">
+                    <div class="section_steps__item-title">Шаг 1</div>
+                    <div class="section_steps__item-text">Добавь кандидатов</div>
+                </div>
+                <div class="section_steps__item">
+                    <img class="section_steps__item-img" src="./images/steps/2.png" alt="Шаг 2">
+                    <div class="section_steps__item-title">Шаг 2</div>
+                    <div class="section_steps__item-text">Добавь в библиотеку свои вопросы и задачи </div>
+                </div>
+                <div class="section_steps__item">
+                    <img class="section_steps__item-img" src="./images/steps/3.png" alt="Шаг 3">
+                    <div class="section_steps__item-title">Шаг 3</div>
+                    <div class="section_steps__item-text">Создай свое уникальное тестовое задание</div>
+                </div>
+                <div class="section_steps__item">
+                    <img class="section_steps__item-img" src="./images/steps/1.png" alt="Шаг 4">
+                    <div class="section_steps__item-title">Шаг 4</div>
+                    <div class="section_steps__item-text">Отслеживай результаты</div>
+                </div>
+                <div class="section_steps__item">
+                    <div class="section_steps__item_five">
+                        <div class="step__like"></div>
+                        <div class="step_five__text">
+                            Поздравляем! <br>Вы нашли лучшего кандидата!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- конц дубля -->
+        </section>
+        <section id="modules" class="section section_modules container_l">
+            <h2 class="section__title">Модули</h2>
+            <div class="modules__container">
+                <div class="modules-item">
+                    <h4 class="modules-item__title bold">
+                        Подбор
+                    </h4>
+                    <div class="modules-item__text">
+                        Все в одном месте : переход кандидатов по этапам, фильтры <br>и статусы
+                    </div>
+                </div>
+                <div class="modules-item">
+                    <h4 class="modules-item__title bold">
+                        Библиотека
+                    </h4>
+                    <div class="modules-item__text">
+                        Большой набор задач, который можно использовать при создании тестовых. Есть все для вашего
+                        удобства - теги, поиск <br>и возможность добавлять собственные задачи
+                    </div>
+                </div>
+                <div class="modules-item">
+                    <h4 class="modules-item__title bold">
+                        Тестовые задания
+                    </h4>
+                    <div class="modules-item__text">
+                        Создавайте тестовые задания <br> из разных типов задач и отправляйте кандидатам. Основные типы
+                        задач проверяются автоматически
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="section section_anons">
+            <div class="container_s section_anons_container">
+                <h2 class="section__title">
+                    Скоро... <br>
+                    на нашей платформе
+                </h2>
+                <div class="annons-items">
+                    <div class="annons-item">
+                        <h4 class="annons-item__title bold">
+                            Аналитика
+                        </h4>
+                        <div class="annons-item__text">
+                            Гибкие фильтры и визуальные отчеты помогают оценить эффективность тестовых заданий и
+                            улучшать процесс подбора
+                        </div>
+                    </div>
+                    <div class="annons-item">
+                        <h4 class="annons-item__title bold">
+                            Live-coding интервью
+                        </h4>
+                        <div class="annons-item__text">
+                            Наблюдайте за ходом решения, комментируйте код и быстро выявляйте сильные стороны кандидатов
+                            в реальном времени
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="section section_links container_l">
+            <div class="section_links__btns">
+                <a href="#" class="btn btn_secondary btn_links">
+                    <span>Попробовать бесплатно</span>
+                </a>
+                <a href="#" class="btn btn_primary btn_links">
+                    <span>
+                        Узнать подробнее о платформе на демо
+                    </span>
+                </a>
+
+            </div>
+        </section>
+        <section id="advantages" class="section section_advantages container_l">
+            <h2 class="section__title">Вы получите инструмент, который...</h2>
+            <div class="advantages-items">
+                <div class="advantages-item">
+                    <div class="advantages-item__count">1</div>
+                    <div class="advantages-item__text">
+                        Упростит взаимодействие технических специалистов и HR
+                    </div>
+                </div>
+                <div class="advantages-item">
+                    <div class="advantages-item__count">2</div>
+                    <div class="advantages-item__text">
+                        Отправит и проверит тестовое <br>с задачами на кодинг в один клик
+                    </div>
+                </div>
+                <div class="advantages-item">
+                    <div class="advantages-item__count">3</div>
+                    <div class="advantages-item__text">
+                        Ускорит найм за счет удобного управления воронкой
+                    </div>
+                </div>
+                <div class="advantages-item">
+                    <div class="advantages-item__count">4</div>
+                    <div class="advantages-item__text">
+                        Сделает найм прозрачнее, позволит отследить истории <br>и статусы
+                    </div>
+                </div>
+                <div class="advantages-item">
+                    <div class="advantages-item__count">5</div>
+                    <div class="advantages-item__text">
+                        Вскоре даст вам возможность <br> проводить Live-coding интервью <br>и оценивать эффективность
+                        найма
+                    </div>
+                </div>
+                <div class="advantages-item">
+                    <div class="advantages-item__count">6</div>
+                    <div class="advantages-item__text">
+                        Будет рад вашей обратной связи на почту <a class="link_red"
+                            href="mailto:feedback@hirety.ru">feedback@hirety.ru</a> <br>или в чате технической поддержки
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="rates" class="section section_rates container_l">
+            <h2 class="section__title">
+                Выберите <br>
+                подходящий тариф
+            </h2>
+            <div class="rates-items">
+                <div class="rates-item">
+                    <div class="rates-item__info">
+                        <div class="rates-item__info_top">
+                            <h4 class="rates-item__title bold">Бесплатный</h4>
+                            <div class="rates-item__text">
+                                Для одной вакансии <br>и маленькой воронки <br>кандидатов
+                            </div>
+                        </div>
+                        <div class="rates-item__info_list-wrapper">
+                            <div class="rates-item__info_list__title">Начни свой подбор с :</div>
+                            <ol class="rates-item__info_list">
+                                <li class="rates-item__info_list-item">Создания собственной базы заданий и тестовых</li>
+                                <li class="rates-item__info_list-item">Добавления неограниченного количества
+                                    пользователей <br>в свою команду</li>
+                                <li class="rates-item__info_list-item">Доступ к примерам заданий</li>
+                            </ol>
+                        </div>
+                        <div class="rates-item__info_adv">
+                            <strong>5</strong> пройденных тестовых заданий кандидатами
+                        </div>
+                    </div>
+                    <div class="rates-item__info_bottom">
+                        <a href="#" class="btn rates-item_btn btn_black">Начать</a>
+                    </div>
+
+                </div>
+                <div class="rates-item">
+                    <div class="rates-item__info">
+                        <div class="rates-item__info_top">
+                            <h4 class="rates-item__title bold">Базовый</h4>
+                            <div class="rates-item__text">
+                                Для нескольких <br> вакансий и маленькой <br> воронки кандидатов
+                            </div>
+                        </div>
+                        <div class="rates-item__info_list-wrapper">
+                            <div class="rates-item__info_list__title">Повысьте скорость своего <br> подбора с :</div>
+                            <ol class="rates-item__info_list">
+                                <li class="rates-item__info_list-item">Расширенным доступом <br>
+                                    к библиотеке hirety с готовыми заданиями</li>
+                                <li class="rates-item__info_list-item">Возможностью докупать отправки*</li>
+                            </ol>
+                        </div>
+                        <div class="rates-item__info_adv">
+                            <strong>25 </strong> пройденных тестовых заданий кандидатами
+                        </div>
+                    </div>
+                    <div class="rates-item__info_bottom">
+                        <div class="rates-item__price">
+                            <span>5 000₽</span> <span class="rates-item__price-text">В месяц</span>
+                        </div>
+                        <a href="#" class="btn rates-item_btn btn_black">
+                            <span>Начать 14-дневную<br> пробную версию</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="rates-item">
+                    <div class="rates-item__info">
+                        <div class="rates-item__info_top">
+                            <h4 class="rates-item__title bold">Расширенный</h4>
+                            <div class="rates-item__text">
+                                Для нескольких вакансий <br> и маленькой воронки <br> кандидатов
+                            </div>
+                        </div>
+                        <div class="rates-item__info_list-wrapper">
+                            <div class="rates-item__info_list__title">Повысьте скорость своего <br> подбора с :</div>
+                            <ol class="rates-item__info_list">
+                                <li class="rates-item__info_list-item">Полным доступом к библиотеке hirety с готовыми
+                                    заданиями <br>и тестовыми</li>
+
+                            </ol>
+                        </div>
+                        <div class="rates-item__info_adv">
+                            <strong>100 </strong>пройденных тестовых заданий кандидатами
+                        </div>
+                        <div class="rates-item__correction">
+                            <strong>*</strong>Стоимость дополнительной <br> отправки <strong>180</strong> рублей
+                        </div>
+                    </div>
+                    <div class="rates-item__info_bottom">
+                        <div class="rates-item__price">
+                            <span>18 000₽</span> <span class="rates-item__price-text">В месяц</span>
+                        </div>
+                        <a href="#" class="btn rates-item_btn btn_black">
+                            <span>Начать 14-дневную<br> пробную версию</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="rates-item">
+                    <div class="rates-item__info">
+                        <div class="rates-item__info_top">
+                            <h4 class="rates-item__title bold">Индивидуальный</h4>
+                            <div class="rates-item__text">
+                                Для тех, кому требуются <br> дополнительные условия <br>
+                                и возможности
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rates-item__info_middle">
+                        <div class="img-personality"></div>
+                    </div>
+                    <div class="rates-item__info_bottom">
+                        <div class="btn rates-item_btn btn_primary" onclick="openModal()" ontouchstart>
+                            <span>Связаться <br>с отделом продаж</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__content_top">
+                    <div class="logo"></div>
+                    <div class="footer__adress">
+                        Ивановская область, г. Луховицы, <br> спуск Будапештсткая, 51
+                    </div>
+                    <a class="footer__mail" href="mailto:info@hirety.ry">info@hirety.ry</a>
+                    <a class="footer__tel" href="tel:+78889383333">+ 7(888)938-33-33</a>
+                    <div class="footer__links">
+                        <a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1_197)">
+                                    <path
+                                        d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316V15.684C0 22.408 1.592 24 8.316 24H15.684C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0ZM19.376 17.123H17.632C16.972 17.123 16.768 16.598 15.582 15.396C14.549 14.396 14.092 14.261 13.838 14.261C13.482 14.261 13.38 14.363 13.38 14.854V16.429C13.38 16.853 13.245 17.107 12.127 17.107C10.281 17.107 8.231 15.989 6.792 13.905C4.624 10.857 4.03 8.57 4.03 8.096C4.03 7.842 4.132 7.605 4.623 7.605H6.367C6.807 7.605 6.977 7.808 7.147 8.282C8.01 10.772 9.45 12.957 10.043 12.957C10.263 12.957 10.365 12.855 10.365 12.297V9.721C10.297 8.535 9.67 8.434 9.67 8.011C9.67 7.807 9.84 7.604 10.11 7.604H12.854C13.227 7.604 13.362 7.807 13.362 8.247V11.72C13.362 12.092 13.532 12.228 13.633 12.228C13.853 12.228 14.04 12.092 14.446 11.686C15.7 10.28 16.597 8.112 16.597 8.112C16.716 7.858 16.919 7.621 17.36 7.621H19.104C19.629 7.621 19.748 7.891 19.629 8.264C19.409 9.281 17.275 12.295 17.275 12.295C17.089 12.6 17.021 12.735 17.275 13.075C17.461 13.329 18.071 13.854 18.478 14.328C19.223 15.175 19.798 15.886 19.951 16.378C20.121 16.868 19.866 17.122 19.375 17.122L19.376 17.123Z"
+                                        fill="#2B2B2B" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_197">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </a>
+                        <a href="">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1_199)">
+                                    <path
+                                        d="M24 12C24 15.1826 22.7357 18.2348 20.4853 20.4853C18.2348 22.7357 15.1826 24 12 24C8.8174 24 5.76516 22.7357 3.51472 20.4853C1.26428 18.2348 0 15.1826 0 12C0 8.8174 1.26428 5.76516 3.51472 3.51472C5.76516 1.26428 8.8174 0 12 0C15.1826 0 18.2348 1.26428 20.4853 3.51472C22.7357 5.76516 24 8.8174 24 12ZM12.4305 8.859C11.2635 9.345 8.9295 10.35 5.4315 11.874C4.8645 12.099 4.566 12.321 4.539 12.537C4.494 12.9015 4.9515 13.0455 5.574 13.242L5.8365 13.3245C6.4485 13.524 7.2735 13.7565 7.701 13.7655C8.091 13.7745 8.5245 13.6155 9.003 13.2855C12.2715 11.079 13.959 9.9645 14.064 9.9405C14.139 9.9225 14.244 9.9015 14.313 9.9645C14.3835 10.026 14.376 10.1445 14.3685 10.176C14.3235 10.3695 12.528 12.0375 11.5995 12.9015C11.31 13.1715 11.1045 13.362 11.0625 13.4055C10.97 13.5 10.876 13.593 10.7805 13.6845C10.2105 14.2335 9.7845 14.6445 10.803 15.3165C11.2935 15.6405 11.6865 15.906 12.078 16.173C12.504 16.464 12.93 16.7535 13.482 17.1165C13.6215 17.2065 13.7565 17.304 13.887 17.397C14.3835 17.751 14.832 18.069 15.3825 18.018C15.7035 17.988 16.035 17.688 16.203 16.788C16.6005 14.6625 17.382 10.059 17.562 8.1615C17.573 8.00376 17.5664 7.84529 17.5425 7.689C17.5284 7.56288 17.4673 7.44669 17.3715 7.3635C17.235 7.26928 17.0723 7.22047 16.9065 7.224C16.4565 7.2315 15.762 7.473 12.4305 8.859Z"
+                                        fill="#2B2B2B" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_199">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </a>
+                    </div>
+                </div>
+                <div class="copyrigts">© ООО «Новый подбор»</div>
+            </div>
+        </div>
+
+    </footer>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal__img">
+
+            </div>
+            <div class="modal__wrapper">
+                <div class="modal__title">Заполните форму для обратной связи</div>
+                <p class="modal__text">Наш менеджер свяжется с вами <br> в течении 30 минут</p>
+                <form id="feedbackForm">
+                    <label class="label_hidden" for="name">Имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Имя" required>
+
+                    <label class="label_hidden" for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="@ Email*" required>
+
+                    <label class="label_hidden" for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7" required>
+
+                    <label class="label-checkbox" for="agreement">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <span>
+                            Я ознакомлен(а) с <a href="#">политикой</a>, <a href="#">соглашением</a>,
+                            и даю согласие на обработку персональных данных
+                        </span>
+
+                    </label>
+
+                    <button class="btn btn_primary" type="submit">Оставить заявку</button>
+                </form>
+            </div>
+            <span class="modal__close" onclick="closeModal()"></span>
+
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
