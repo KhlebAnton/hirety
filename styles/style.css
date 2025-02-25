@@ -1193,6 +1193,9 @@ a {
     br {
         display: none;
     }
+    .section__title br {
+        display: block;
+    }
 .desktop-hidden {
     display: block;
 }
