@@ -1095,6 +1095,47 @@ a {
     color: #999999;
     margin: 16px 0 24px;
 }
+nav.one_link {
+    max-width: none;
+}
+.single_section {
+    min-height: 40vh;
+    
+}
+.single_section__text {
+    margin: 40px 0;
+    text-align: center;
+}
+.single_section__text a {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+.single_section__title {
+    position: relative;
+    margin-top: 90px;
+}
+.single_section__title::before {
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background: url('../images/rocjet.png') 50% / contain no-repeat;
+    z-index: -1;
+    right: 20%;
+    top: 80px;
+    transform: rotate(60deg);
+}
+.privacy_policy {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.privacy_policy ul {
+    padding-left: 1em;
+}
+.privacy_policy {
+    text-align: start;
+}
 @media (max-width: 1450px) {
     .rates-items {
         grid-template-columns: repeat(2, 1fr);
@@ -1327,6 +1368,9 @@ a {
     .modal__title {
         font-size: 32px;
         line-height: 31px;
+    }
+    .single_section__title::before {
+        top: -130px;
     }
 
 }
